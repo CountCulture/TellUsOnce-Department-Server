@@ -30,7 +30,7 @@ ActionMailer::Base.default_charset = "utf-8"
 ActionMailer::Base.raise_delivery_errors = true
 
 ActionMailer::Base.smtp_settings = {
-  :domain          => "todemo@gmal.com",
+  :domain          => "todemo@gmail.com",
   :address         => 'smtp.gmail.com',
   :port            => 587,
   :tls             => true,
