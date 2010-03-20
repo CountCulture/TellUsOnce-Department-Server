@@ -1,6 +1,6 @@
 class MainController < ApplicationController
   before_filter :authenticate
-  protect_from_forgery false
+  skip_before_filter :verify_authenticity_token
 
   def create
     logger.error { "Params received =\n#{params}" }
