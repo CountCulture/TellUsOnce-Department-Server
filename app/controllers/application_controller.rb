@@ -7,4 +7,11 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+
+  private
+  def authenticate
+    authenticate_or_request_with_http_basic("tuo_demo") do |username, password|
+      AUTHENTICATED_USERS[username] == password
+    end
+  end
 end

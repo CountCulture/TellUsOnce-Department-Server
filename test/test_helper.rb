@@ -35,4 +35,10 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  private
+  def stub_authentication
+    @controller.stubs(:authenticate).returns(true)
+  end
+
+  
 end

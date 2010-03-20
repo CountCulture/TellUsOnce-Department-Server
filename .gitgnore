@@ -1,0 +1,13 @@
+log/*.log
+log/*.log.*
+tmp/**/*
+.DS_Store
+*.tmproj
+doc/api
+doc/app
+db/*.sqlite3
+config/initializers/authentication_details.rb
+config/deploy
+Capfile
+public/cache
+*~
