@@ -7,7 +7,7 @@ We have updated our records accordingly.
 <%- if @reg_offices -%>
 You should now register the death at your local registry offices. Here are the ones nearest to you:
 <%- @reg_offices.each_with_index do |office, i| -%>
-<%= i+1 %>. [approx <%= office['dist_miles'] %> away] <%= office['name'] %>, <%= office['address'] %>, <%= office['url'] %>
+<%= i+1 %>. [approx <%= office['dist_miles'] %> miles away] <%= office['name'] %>, <%= office['address'] %>, <%= office['url'] %>
 
 <%- end -%>
 <%- end -%>
