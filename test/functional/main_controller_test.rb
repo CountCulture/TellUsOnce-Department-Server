@@ -22,7 +22,13 @@ class MainControllerTest < ActionController::TestCase
        end
      
        should_respond_with 201 # status code for created
-     
+       
+       should 'instantiate submitter from xml' do
+         assert assigns(:submitter)
+       end
+       should 'instantiate notification from xml' do
+         assert assigns(:change_notification)
+       end
      end
      
      context "with invalid params" do
