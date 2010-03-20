@@ -8,6 +8,7 @@ class MainController < ApplicationController
     notification = Hash.from_xml(params[:notification])['notification']   
     @submitter, @change_notification = notification['submitter'], notification['change_notification']
     begin
+      logger.debug { "@submitter location = #{@submitter['postcode']}" }
       reg_offices_json = open("http://tartarus.org/richard/registries/find?maxhits=3&loc=#{URI.escape(@submitter['postcode'])}").read
       reg_offices = ActiveSupport::JSON.decode(reg_offices_json)['registries']
     rescue Exception => e
