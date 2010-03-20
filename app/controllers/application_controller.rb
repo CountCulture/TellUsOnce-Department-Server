@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   private
   def authenticate
     authenticate_or_request_with_http_basic("tuo_demo") do |username, password|
-      AUTHENTICATED_USERS[username] == password
+      ((ENV['AUTH_USER'] == username) && (ENV['AUTH_PWD'] == password)) || (AUTHENTICATED_USERS[username] == password) # get heroku password or use local one
     end
   end
 end
